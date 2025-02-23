@@ -35,14 +35,14 @@ func (r *repository) Save(user User) (User, error) {
 
 // Function to find user data by email
 func (r *repository) FindByEmail(email string) (User, error) {
-	var user User
+    var user User
 
-	// Find user data by email
-	err := r.db.Where("email = ?", email).Find(&user).Error
+    // Find user data by email
+    err := r.db.Where("email = ?", email).Find(&user).Error
 
-	if err != nil {
-		return user, err
-	}
+    if err != nil {
+        return user, err
+    }
 
-	return user, nil
+    return user, nil
 }
